@@ -207,9 +207,6 @@ class cust_win:
         self.Cust_Details_Table.pack(fill=BOTH,expand=1)
         self.Cust_Details_Table.bind("<ButtonRelease-1>",self.get_cursor)
 
-    
-          
-
 
     def add_data(self):
         if self.var_mobile.get()==""or self.var_cust_name.get()=="":
@@ -232,19 +229,7 @@ class cust_win:
                                                                                                self.var_address.get()
                                                                                                )
             
-                                                                                               
-                                                                                               
-    
-    
-     
-
-    
-        
-
-
-
-
-         
+      
                                                                                               
                                                                                         
             conn.commit()
@@ -252,7 +237,7 @@ class cust_win:
             messagebox.showinfo("Success","customer has been added",parent=self.root)
             
             except Exception as es:
-            messagebox.showwarning("warning",f"something went wrong:{str()}",parent=self.root)   
+             messagebox.showwarning("warning",f"something went wrong:{str()}",parent=self.root)   
 
 
 
