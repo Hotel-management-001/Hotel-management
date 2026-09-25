@@ -266,20 +266,19 @@ class cust_win:
         else:
              conn=mysql.connector.connect(host="localhost",username="root",password="vaibhav@2026",database="management")
              my_cursor=conn.cursor()
-             my_cursor.execute("update* from customer set Name=%s,Mother=%s,Gender=%s,Postcode=%s,Mobile=%s,Email=%s,Nationality=%s,idproof=%s,idnumber=%s,Address=%s where Ref=%s",
-                               (self.var_ref.get(),                                                                                                                                                                       
-                                self.var_cust_name.get(),
-                                self.var_mother.get(),
-                                self.var_gender.get(),
-                                self.var_post.get(),
-                                self.var_mobile.get(),
-                                self.var_email.get(),
-                                self.var_nationality.get(),
-                                self.var_idproof.get(),
-                                self.var_idnumber.get(),
-                                self.var_address.get(),
-                                 self.var_ref.get(),
-                                )
+             my_cursor.execute("update* from customer set Name=%s,Mother=%s,Gender=%s,Postcode=%s,Mobile=%s,Email=%s,Nationality=%s,idproof=%s,idnumber=%s,Address=%s where Ref=%s",(self.var_ref.get(),
+                                                                                                                                                                                    self.var_cust_name.get(),
+                                                                                                                                                                                    self.var_mother.get(),
+                                                                                                                                                                                    self.var_gender.get(),
+                                                                                                                                                                                    self.var_post.get(),
+                                                                                                                                                                                    self.var_mobile.get(),
+                                                                                                                                                                                    self.var_email.get(),
+                                                                                                                                                                                    self.var_nationality.get(),
+                                                                                                                                                                                    self.var_idproof.get(),
+                                                                                                                                                                                    self.var_idnumber.get(),
+                                                                                                                                                                                    self.var_address.get(),
+                                                                                                                                                                                    self.var_ref.get(),
+                                                                                                                                                                                    )
             conn.commit()
             self.fetch_data()
             conn. close()
