@@ -267,7 +267,6 @@ class cust_win:
              conn=mysql.connector.connect(host="localhost",username="root",password="vaibhav@2026",database="management")
              my_cursor=conn.cursor()
              my_cursor.execute("update* from customer set Name=%s,Mother=%s,Gender=%s,Postcode=%s,Mobile=%s,Email=%s,Nationality=%s,idproof=%s,idnumber=%s,Address=%s where Ref=%s",
-                               ( 
                                (self.var_ref.get(),                                                                                                                                                                       
                                 self.var_cust_name.get(),
                                 self.var_mother.get(),
@@ -280,7 +279,7 @@ class cust_win:
                                 self.var_idnumber.get(),
                                 self.var_address.get(),
                                  self.var_ref.get(),
-                                ))
+                                )
             conn.commit()
             self.fetch_data()
             conn. close()
