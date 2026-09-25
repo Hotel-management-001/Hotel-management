@@ -210,18 +210,18 @@ class cust_win:
             conn=mysql.connector.connect(host="localhost",username="root",password="vaibhav@2026",database="management")
             my_cursor=conn.cursor()
             my_cursor.execute("insert into customer values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s"),
-                (self.var_ref.get(),
-               self.var_cust_name.get(),
-               self.var_mother.get(),
-               self.var_gender.get(),
-               self.var_post.get(),
-               self.var_mobile.get(),
-               self.var_email.get(),
-               self.var_nationality.get(),
-               self.var_idproof.get(),
-               self.var_idnumber.get(),
-               self.var_address.get()
-               )
+            (self.var_ref.get(),
+            self.var_cust_name.get(),
+            self.var_mother.get(),
+            self.var_gender.get(),
+            self.var_post.get(),
+            self.var_mobile.get(),
+            self.var_email.get(),
+            self.var_nationality.get(),
+            self.var_idproof.get(),
+            self.var_idnumber.get(),
+            self.var_address.get()
+            )
             
             conn.commit()
             conn.close()
