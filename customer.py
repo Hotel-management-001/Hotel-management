@@ -227,8 +227,8 @@ class cust_win:
             conn.close()
             messagebox.showinfo("Success","customer has been added",parent=self.root)
             
-            except Exception as es:
-                messagebox.showwarning("warning",f"something went wrong:{str()}",parent=self.root)   
+        except Exception as es:
+            messagebox.showwarning("warning",f"something went wrong:{str()}",parent=self.root)   
 
 
 
