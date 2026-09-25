@@ -9,13 +9,6 @@ from tkinter import messagebox
 
 
 
-
-
- 
-
-
-
-
 class cust_win:
     def __init__(self,root):
         self.root=root
@@ -275,21 +268,21 @@ class cust_win:
             else:
                  conn=mysql.connector.connect(host="localhost",username="root",password="vaibhav@2026",database="management")
                  my_cursor=conn.cursor()
-                 my_cursor.execute("update* from customer set Name=%s,Mother=%s,Gender=%s,Postcode=%s,Mobile=%s,Email=%s,Nationality=%s,idproof=%s,idnumber=%s,Address=%s where Ref=%s",( 
-                 (self.var_ref.get(),
-                                                                                                                                                                                    
-                                                                                                                                                                                    self.var_cust_name.get(),
-                                                                                                                                                                                    self.var_mother.get(),
-                                                                                                                                                                                    self.var_gender.get(),
-                                                                                                                                                                                    self.var_post.get(),
-                                                                                                                                                                                    self.var_mobile.get(),
-                                                                                                                                                                                    self.var_email.get(),
-                                                                                                                                                                                    self.var_nationality.get(),
-                                                                                                                                                                                    self.var_idproof.get(),
-                                                                                                                                                                                    self.var_idnumber.get(),
-                                                                                                                                                                                    self.var_address.get(),
-                                                                                                                                                                                     self.var_ref.get(),
-                                                                                                                                                                                    ))
+                 my_cursor.execute("update* from customer set Name=%s,Mother=%s,Gender=%s,Postcode=%s,Mobile=%s,Email=%s,Nationality=%s,idproof=%s,idnumber=%s,Address=%s where Ref=%s",
+                                   ( 
+                                   (self.var_ref.get(),                                                                                                                                                                       
+                                    self.var_cust_name.get(),
+                                    self.var_mother.get(),
+                                    self.var_gender.get(),
+                                    self.var_post.get(),
+                                    self.var_mobile.get(),
+                                    self.var_email.get(),
+                                    self.var_nationality.get(),
+                                    self.var_idproof.get(),
+                                    self.var_idnumber.get(),
+                                    self.var_address.get(),
+                                     self.var_ref.get(),
+                                    ))
                 conn.commit()
                 self.fetch_data()
                 conn. close()
@@ -309,167 +302,40 @@ class cust_win:
                             conn.commit()
                             self.fetch_data()
                             conn.close()
-                        def reset(self):
-                             self.var_ref.set(row[0]),
-                                                 self.var_cust_name.set(""),
-                                                 self.var_mother.set(""),
-                                                 
-                                                 #self.var_gender.set(""),
-                                                 self.var_post.set(""),
-                                                 self.var_mobile.set(""),
-                                                 self.var_email.set(""),
-                                                # self.var_nationality.set(""),
-                                                 #self.var_id_proof.set(""),
-                                                 self.var_id_number.set(""),
-                                                 self.var_address.set(""),
-                                                 self.var_ref=StringVar()
-                                                 x=random.randint(1000,9999)
-                                                 self.var_ref.set(str(x)) 
-                        def serch(self):
-                             conn=mysql.connector.connect(host="localhost",username="root",password=vaibahv@2026,database="management")
-                             my_cursor=conn.cursor()
-
-                             my_cursor.execute("select * from customer where"+str(self.serch_var.get())+"Like'%"+str(self.txt_serch.get)
-                             rows=my_cursor.fetchall()
-                             if len(rows)!=0:
-                                  self.cust_Details_Table.delete(*self.cust_Details_table)
-                                  for i in rows:
-                                    self.cust_Details_table.insert("",END,values=i)
-                                    conn.commit()
-                                    conn.clase()
-                                  
-
-                        
-
-                                 
-
-
-                 
-
+                def reset(self):
+                     self.var_ref.set(row[0]),
+                                         self.var_cust_name.set(""),
+                                         self.var_mother.set(""),
+                                         
+                                         #self.var_gender.set(""),
+                                         self.var_post.set(""),
+                                         self.var_mobile.set(""),
+                                         self.var_email.set(""),
+                                        # self.var_nationality.set(""),
+                                         #self.var_id_proof.set(""),
+                                         self.var_id_number.set(""),
+                                         self.var_address.set(""),
+                                         self.var_ref=StringVar()
+                                         x=random.randint(1000,9999)
+                                         self.var_ref.set(str(x)) 
+                def serch(self):
+                     conn=mysql.connector.connect(host="localhost",username="root",password=vaibahv@2026,database="management")
+                     my_cursor=conn.cursor()
+ 
+                     my_cursor.execute("select * from customer where"+str(self.serch_var.get())+"Like'%"+str(self.txt_serch.get)
+                     rows=my_cursor.fetchall()
+                     if len(rows)!=0:
+                          self.cust_Details_Table.delete(*self.cust_Details_table)
+                          for i in rows:
+                            self.cust_Details_table.insert("",END,values=i)
+                            conn.commit()
+                            conn.clase()
+  
 
                  rows=my_cursor.fetchall()
                     
 
-                     
-                    
-                    
-                    
-
-
-
-
-
-
-            
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
-
-
-
-
-   
-
-
-
-
-
-         
-        
-
 
 
 if __name__=="__main__":
