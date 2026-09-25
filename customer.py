@@ -243,95 +243,95 @@ class cust_win:
                 self.Cust_Details_Table.insert("",END,value=i)
                 
             conn.close()
-        def get_cuersor(self,event=""):
-                    cursor_row=self.cust_Details_Table.focus()
-                    content=self.cust_Details_table.item(cursor_row) 
-                    row=content["values"]
-                    
-                    if row:
-                         self.var_ref.set(row[0]),
-                         self.var_cust_name.set(row[1]),
-                         self.var_mother.set(row[2]),
-                         self.var_gender.set(row[3]),
-                         self.var_post.set(row[4]),
-                         self.var_mobile.set(row[5]),
-                         self.var_email.set(row[6]),
-                         self.var_nationality.set(row[7]),
-                         self.var_id_proof.set(row[8]),
-                         self.var_id_number.set(row[9]),
-                         self.var_address.set(row[10]),
-        def update(self):
-            if self.var_mobile.get()=="":
-                 messagebox.showerror("Error","please enter mobiloe number ",parent=self.root)
-            else:
-                 conn=mysql.connector.connect(host="localhost",username="root",password="vaibhav@2026",database="management")
-                 my_cursor=conn.cursor()
-                 my_cursor.execute("update* from customer set Name=%s,Mother=%s,Gender=%s,Postcode=%s,Mobile=%s,Email=%s,Nationality=%s,idproof=%s,idnumber=%s,Address=%s where Ref=%s",
-                                   ( 
-                                   (self.var_ref.get(),                                                                                                                                                                       
-                                    self.var_cust_name.get(),
-                                    self.var_mother.get(),
-                                    self.var_gender.get(),
-                                    self.var_post.get(),
-                                    self.var_mobile.get(),
-                                    self.var_email.get(),
-                                    self.var_nationality.get(),
-                                    self.var_idproof.get(),
-                                    self.var_idnumber.get(),
-                                    self.var_address.get(),
-                                     self.var_ref.get(),
-                                    ))
+    def get_cuersor(self,event=""):
+                cursor_row=self.cust_Details_Table.focus()
+                content=self.cust_Details_table.item(cursor_row) 
+                row=content["values"]
+                
+                if row:
+                     self.var_ref.set(row[0]),
+                     self.var_cust_name.set(row[1]),
+                     self.var_mother.set(row[2]),
+                     self.var_gender.set(row[3]),
+                     self.var_post.set(row[4]),
+                     self.var_mobile.set(row[5]),
+                     self.var_email.set(row[6]),
+                     self.var_nationality.set(row[7]),
+                     self.var_id_proof.set(row[8]),
+                     self.var_id_number.set(row[9]),
+                     self.var_address.set(row[10]),
+    def update(self):
+        if self.var_mobile.get()=="":
+             messagebox.showerror("Error","please enter mobiloe number ",parent=self.root)
+        else:
+             conn=mysql.connector.connect(host="localhost",username="root",password="vaibhav@2026",database="management")
+             my_cursor=conn.cursor()
+             my_cursor.execute("update* from customer set Name=%s,Mother=%s,Gender=%s,Postcode=%s,Mobile=%s,Email=%s,Nationality=%s,idproof=%s,idnumber=%s,Address=%s where Ref=%s",
+                               ( 
+                               (self.var_ref.get(),                                                                                                                                                                       
+                                self.var_cust_name.get(),
+                                self.var_mother.get(),
+                                self.var_gender.get(),
+                                self.var_post.get(),
+                                self.var_mobile.get(),
+                                self.var_email.get(),
+                                self.var_nationality.get(),
+                                self.var_idproof.get(),
+                                self.var_idnumber.get(),
+                                self.var_address.get(),
+                                 self.var_ref.get(),
+                                ))
+            conn.commit()
+            self.fetch_data()
+            conn. close()
+            messagebox.showinfo("update","customer details has been updated successfully")    
+
+    def mDelete(self):
+        mDelete=messagebox.askyesno("Hotel Management system","Do you want delete this customer",parents=self.root)
+        if mDelete>0:
+           conn=mysql.connector.connect(host="localhost",username="root",password=vaibhav@2026,database="management")
+           my_cursor=conn.cursor()
+           query="delete from customer ref =%s"  
+           value=(self.var_ref.get(),)
+           my_cursor.execute(query,value)
+           else:
+               if not mDelete:
+                     return 
                 conn.commit()
                 self.fetch_data()
-                conn. close()
-                messagebox.showinfo("update","customer details has been updated successfully")    
+                conn.close()
+    def reset(self):
+         self.var_ref.set(row[0]),
+                             self.var_cust_name.set(""),
+                             self.var_mother.set(""),
+                             
+                             #self.var_gender.set(""),
+                             self.var_post.set(""),
+                             self.var_mobile.set(""),
+                             self.var_email.set(""),
+                            # self.var_nationality.set(""),
+                             #self.var_id_proof.set(""),
+                             self.var_id_number.set(""),
+                             self.var_address.set(""),
+                             self.var_ref=StringVar()
+                             x=random.randint(1000,9999)
+                             self.var_ref.set(str(x)) 
+    def serch(self):
+         conn=mysql.connector.connect(host="localhost",username="root",password=vaibahv@2026,database="management")
+         my_cursor=conn.cursor()
 
-                def mDelete(self):
-                    mDelete=messagebox.askyesno("Hotel Management system","Do you want delete this customer",parents=self.root)
-                    if mDelete>0:
-                       conn=mysql.connector.connect(host="localhost",username="root",password=vaibhav@2026,database="management")
-                       my_cursor=conn.cursor()
-                       query="delete from customer ref =%s"  
-                       value=(self.var_ref.get(),)
-                       my_cursor.execute(query,value)
-                       else:
-                           if not mDelete:
-                                 return 
-                            conn.commit()
-                            self.fetch_data()
-                            conn.close()
-                def reset(self):
-                     self.var_ref.set(row[0]),
-                                         self.var_cust_name.set(""),
-                                         self.var_mother.set(""),
-                                         
-                                         #self.var_gender.set(""),
-                                         self.var_post.set(""),
-                                         self.var_mobile.set(""),
-                                         self.var_email.set(""),
-                                        # self.var_nationality.set(""),
-                                         #self.var_id_proof.set(""),
-                                         self.var_id_number.set(""),
-                                         self.var_address.set(""),
-                                         self.var_ref=StringVar()
-                                         x=random.randint(1000,9999)
-                                         self.var_ref.set(str(x)) 
-                def serch(self):
-                     conn=mysql.connector.connect(host="localhost",username="root",password=vaibahv@2026,database="management")
-                     my_cursor=conn.cursor()
- 
-                     my_cursor.execute("select * from customer where"+str(self.serch_var.get())+"Like'%"+str(self.txt_serch.get)
-                     rows=my_cursor.fetchall()
-                     if len(rows)!=0:
-                          self.cust_Details_Table.delete(*self.cust_Details_table)
-                          for i in rows:
-                            self.cust_Details_table.insert("",END,values=i)
-                            conn.commit()
-                            conn.clase()
-  
+         my_cursor.execute("select * from customer where"+str(self.serch_var.get())+"Like'%"+str(self.txt_serch.get)
+         rows=my_cursor.fetchall()
+         if len(rows)!=0:
+              self.cust_Details_Table.delete(*self.cust_Details_table)
+              for i in rows:
+                self.cust_Details_table.insert("",END,values=i)
+                conn.commit()
+                conn.clase()
 
-                 rows=my_cursor.fetchall()
-                    
+
+     rows=my_cursor.fetchall()
+        
 
         
 
